@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import Inputs from './Inputs'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	return (
+		<div className='grid place-content-center h-screen w-screen font-mono text-center'>
+			<h1 className='font-bold text-3xl mb-8'>Subject Planner</h1>
+			<Inputs />
+		</div>
+	)
 }
 
-export default App;
+export default App
