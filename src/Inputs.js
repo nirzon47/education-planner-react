@@ -1,6 +1,39 @@
-const Inputs = () => {
+const Inputs = ({ setPlanner }) => {
+	const addSubject = () => {
+		const subject = document.getElementById('subject')
+		const hours = document.getElementById('hours')
+
+		if (!subject.value && !hours.value) {
+			subject.classList.add('input-error')
+			hours.classList.add('input-error')
+		} else {
+			subject.classList.remove('input-error')
+			hours.classList.remove('input-error')
+		}
+
+		if (!subject.value) {
+			subject.classList.add('input-error')
+			return
+		}
+
+		if (!hours.value) {
+			hours.classList.add('input-error')
+			return
+		}
+
+		const planner = JSON.parse(localStorage.getItem('planner')) || []
+
+		planner.push({
+			subject: subject.value,
+			hours: hours.value,
+		})
+
+		localStorage.setItem('planner', JSON.stringify(planner))
+		setPlanner(true)
+	}
+
 	return (
-		<div className='flex gap-4'>
+		<div className='flex gap-4 mb-4'>
 			<input
 				type='text'
 				id='subject'
@@ -18,7 +51,9 @@ const Inputs = () => {
 				min={1}
 				max={12}
 			/>
-			<button className='btn btn-accent'>Add</button>
+			<button className='btn btn-accent' onClick={addSubject}>
+				Add
+			</button>
 		</div>
 	)
 }
