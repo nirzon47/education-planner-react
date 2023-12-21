@@ -22,7 +22,7 @@ const Planner = ({ setPlanner }) => {
 	}
 
 	return (
-		<div id='planner' className='h-[60vh] overflow-y-scroll'>
+		<div id='planner' className='lg:h-[60vh] overflow-y-scroll'>
 			<div className='overflow-x-auto'>
 				<table className='table text-lg text-center'>
 					<thead>

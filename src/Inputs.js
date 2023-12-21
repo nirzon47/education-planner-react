@@ -42,7 +42,7 @@ const Inputs = ({ setPlanner }) => {
 	}
 
 	return (
-		<div className='flex gap-4 mb-8'>
+		<div className='flex gap-4 mb-8 flex-wrap justify-center items-center'>
 			<input
 				type='text'
 				id='subject'
