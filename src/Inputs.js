@@ -21,6 +21,12 @@ const Inputs = ({ setPlanner }) => {
 			return
 		}
 
+		if (hours.value < 1 || hours.value > 12) {
+			hours.classList.add('input-error')
+			alert('Hours must be between 1 and 12')
+			return
+		}
+
 		const planner = JSON.parse(localStorage.getItem('planner')) || []
 
 		planner.push({
@@ -33,7 +39,7 @@ const Inputs = ({ setPlanner }) => {
 	}
 
 	return (
-		<div className='flex gap-4 mb-4'>
+		<div className='flex gap-4 mb-8'>
 			<input
 				type='text'
 				id='subject'
