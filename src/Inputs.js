@@ -35,6 +35,9 @@ const Inputs = ({ setPlanner }) => {
 		})
 
 		localStorage.setItem('planner', JSON.stringify(planner))
+		subject.value = ''
+		hours.value = ''
+
 		setPlanner(true)
 	}
 

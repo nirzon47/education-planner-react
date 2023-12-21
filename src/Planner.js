@@ -15,6 +15,7 @@ const Planner = ({ setPlanner }) => {
 		if (subjects[index].hours === 1) {
 			return
 		}
+
 		subjects[index].hours--
 		localStorage.setItem('planner', JSON.stringify(subjects))
 		setPlanner(true)
